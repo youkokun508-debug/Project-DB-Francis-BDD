@@ -4,7 +4,7 @@
 #initialiser le jeu 
 # boucle infini
 #   afficher le menu
-#   demande un choix valide
+#   recuperer un choix valide
 #   executer le choix valide 
 
 #afficher le menu
@@ -12,7 +12,7 @@
 #   2/ Leaderboard
 #   3/ Quitter le jeu
 
-#demander un choix valide
+#recuperer un choix valide
 #   demander un choix input
 #       si choix est valide(choix, min, max)
 #           retourner choix
@@ -23,7 +23,7 @@
 # boucle infini
 #   si choix n'est pas un nombre isdigit
 #       retourner false
-#   si choix < min et choix > max 
+#   si choix < min ou choix > max 
 #       retourner false
 #   sinon
 #       retourner vrais
@@ -38,8 +38,8 @@
 
 #Lancer une nouvelle partie
 #   recuperer le pseudo
-#   recuperer l'equipe TODO:
-#   lancer un jeu TODO:
+#   recuperer l'equipe
+#   lancer le jeu TODO:
 #   Fin du jeu TODO: 
 #
 
@@ -64,15 +64,40 @@
 
 #recuperer l'equipe 
 #   initialise l'equipe avec rien 
-#   initialise l'equipe en vie 
-#   boucle tant que taille de equipe > 3 
-#      choix de l'equipe TODO:
-#   equipe en vie = equipe
+#   boucle tant que taille de equipe < 3 
+#      choix de l'equipe
 #   return equipe
 
 #choix de l'equipe
 #       afficher l'equipe 
 #       afficher les heros dispo
-#       demander un choi valide de hero (input) TODO:
+#       recuperer un choix valide de hero 
 #       ajouter la choix de hero dans une list equipe
 #       enlever le hero choisi de la list des heros de la base de donnée
+
+#lancer le jeu
+#boucle infini
+#   tant que equipe en vie > 0
+#       apparition d'un monstre au hasard
+#       lancer un tour TODO:
+#   fin du jeu TODO:
+
+#lancer un tour
+#   affichage
+#   pour chaque hero dans equipe en vie
+#       si pv monstre en vie > 0
+#           attaque (hero) TODO:
+#   si pv monstre en vie > 0
+#       attaque (monstre) TODO:
+
+#apparition d'un monstre au hasard
+#   si il n'y a rien dans monstre en vie
+#       on ajoute un monstre au hasard dans monstre en vie
+#   sinon
+#       si les pv du monstre en vie sont > 0
+#           pass
+#       sinon
+#           on supprime le monstre (pop)
+#           on ajoute un monstre au hasard dans monstre en vie     
+
+#

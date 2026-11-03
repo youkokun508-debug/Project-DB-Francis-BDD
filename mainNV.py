@@ -55,7 +55,6 @@
 #   si pv d'un hero en vie tombe a <= 0 alors le hero en question est enlevé de la list 
 
 #fonctionnement d'un tour
-# boucle
 # pour chaque hero dans la list hero en vie 
 # on fait attaquer un herro en vie
 #  si pv du monstre > 0 
