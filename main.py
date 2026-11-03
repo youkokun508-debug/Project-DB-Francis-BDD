@@ -1,9 +1,9 @@
 #importer les données de la base de donnée
 #(from pymongo import MongoClient ) etc...
 
-#jeu infinis
-#lancement du jeu
-#afficher le menu a choix 
+# jeu infinis
+#   afficher le menu a choix 
+
 #initialiser la list equipe avec rien a l'interieur 
 
 #le menu : 
@@ -25,7 +25,7 @@
 #      ajouter le choix de hero dans une list equipe
 #       enlever le hero choisi de la list des heros de la base de donnée
 
-# choix valide(number, min, max)
+# demander choix valide(number, min, max)
 #   boucle
 #   le joueur choisi un nombre
 #     si "" est un nombre (isdigit) et qu'il est entre le min et max 
