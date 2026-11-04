@@ -58,7 +58,7 @@
 
 #recuperer l'equipe 
 #   initialise l'equipe avec rien
-#   recuperer heros dispo epuis la b 
+#   recuperer heros dispo depuis la db 
 #   boucle tant que taille de equipe < 3 
 #      choix de l'equipe
 #   return equipe
