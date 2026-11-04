@@ -67,12 +67,12 @@
 #   target choisi au hazard vas subir des dégats du hunter
 
 #subir dégat(charecter, hunter)
-#   pv(character) - dégat
+#   pv(character) - calcule dégat
 #   actualise les pv(character)
 
 # calcule dégat(charactere, hunter)
 #     att(hunter) - calcule defence
-#     si att(hunter) < 0 
+#     si att(hunter) > 0 
 #          retourner att(hunter)
 #     sinon
 #         att(hunter) = 1

@@ -83,12 +83,18 @@
 #   fin du jeu TODO:
 
 #lancer un tour
-#   affichage
-#   pour chaque hero dans equipe en vie
+#   pour chaque hero dans equipe qui est en vie 
 #       si pv monstre en vie > 0
-#           attaque (hero) TODO:
-#   si pv monstre en vie > 0
-#       attaque (monstre) TODO:
+#           tour (hero)
+#   si pv monstre en vie > 0 et si equipe en vie 
+#       tour (monstre) 
+
+#en vie
+#   pour chaque personnage dans equipe 
+#       si pv du personnage > 0
+#           retourne vrais
+#       sinon
+#           retourner faux
 
 #apparition d'un monstre au hasard
 #   si il n'y a rien dans monstre en vie
@@ -98,6 +104,34 @@
 #           pass
 #       sinon
 #           on supprime le monstre (pop)
-#           on ajoute un monstre au hasard dans monstre en vie     
+#           on ajoute un monstre au hasard dans monstre en vie
 
-#
+#tour hero sera dans les class (hunter, target)
+#  target subie des degats du hunter
+
+#tour du monstre sera dans la class monstre(hunter, taget)
+#   target choisi au hazard vas subir des dégats du hunter
+
+#subir dégat(charecter, hunter)
+#   pv(character) - calcule dégats
+#   actualise les pv(character) TODO:
+#   retourner pv charactere
+
+#character 
+#   on met son nom , 
+
+#actualiser les pv 
+#   
+
+#calcule degats(hunter, cible)
+#   degats = att(hunter) - calcule defence
+#   si degats < 1
+#       degats = 1
+#   retourner degats
+
+#calcule defense(self)
+#   retourner defense + somme des defenses des items 
+
+#somme des defences des items
+#   pour chaque item dans la liste item 
+#       on ajoute les def de chaque item ( sum(item[def]) )
