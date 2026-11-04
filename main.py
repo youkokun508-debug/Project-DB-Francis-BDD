@@ -25,8 +25,7 @@
 #       retourner false
 #   si choix < min ou choix > max 
 #       retourner false
-#   sinon
-#       retourner vrais
+#    retourner vrais
 
 #executer le choix valide
 #   si le choix = 1 
@@ -39,15 +38,10 @@
 #Lancer une nouvelle partie
 #   recuperer le pseudo
 #   recuperer l'equipe
-#   lancer le jeu TODO:
-#   Fin du jeu TODO: 
-#
+#   lancer le jeu 
 
 #ouvrir le leaderboard
-#   afficher le leaderboard
-
-#Fermer le jeu
-#   ferme le jeu
+#   afficher la list leaderboard par le dernier (car list trié ordre croissant du score)
 
 #recuperer le pseudo valide
 #   demande de rentrer le pseudo input
@@ -63,7 +57,8 @@
 #       return true 
 
 #recuperer l'equipe 
-#   initialise l'equipe avec rien 
+#   initialise l'equipe avec rien
+#   recuperer heros dispo epuis la b 
 #   boucle tant que taille de equipe < 3 
 #      choix de l'equipe
 #   return equipe
@@ -71,16 +66,36 @@
 #choix de l'equipe
 #       afficher l'equipe 
 #       afficher les heros dispo
-#       recuperer un choix valide de hero 
-#       ajouter la choix de hero dans une list equipe
-#       enlever le hero choisi de la list des heros de la base de donnée
+#       recuperer un choix valide
+#       ajouter la choix de hero dans une list equipe inex = choix - 1 
+#       enlever le hero choisi de la list des heros dispo
 
 #lancer le jeu
 #boucle infini
-#   tant que equipe en vie > 0
-#       apparition d'un monstre au hasard
-#       lancer un tour TODO:
-#   fin du jeu TODO:
+#   tant que equipe en vie
+#       gerer l'apparition du monstre en vie
+#       lancer un tour
+#   enregistre le score optenue
+#   fin du jeu 
+
+#enregistre le score optenue 
+#   si la liste leaderboard < 10
+#       ajouter le score + pseudo dans la liste
+#   sinon
+#       si score dans le top 10 
+#           supprimer le premier score + pseudo de la list 
+#           ajoute le score + pseudo dans la liste
+#           trie la list dans l'ordre croissant 
+
+#score dans le top 10
+#   si le score > au premier score 
+#       retourner vrais
+#   sinon 
+#       retourner faux
+
+#fin du jeu
+#   message de fin du jeu
+#   ferme le jeu
 
 #lancer un tour
 #   pour chaque hero dans equipe qui est en vie 
@@ -96,7 +111,7 @@
 #       sinon
 #           retourner faux
 
-#apparition d'un monstre au hasard
+#gerer l'apparition du monstre en vie
 #   si il n'y a rien dans monstre en vie
 #       on ajoute un monstre au hasard dans monstre en vie
 #   sinon
@@ -113,15 +128,12 @@
 #   target choisi au hazard vas subir des dégats du hunter
 
 #subir dégat(charecter, hunter)
-#   pv(character) - calcule dégats
-#   actualise les pv(character) TODO:
+#   actualise les pv(character, calcule degats) 
 #   retourner pv charactere
 
-#character 
-#   on met son nom , 
-
 #actualiser les pv 
-#   
+#   pv(character) -= calcule dégats
+#   retourner les pv
 
 #calcule degats(hunter, cible)
 #   degats = att(hunter) - calcule defence
