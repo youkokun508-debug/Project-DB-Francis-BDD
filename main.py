@@ -11,8 +11,7 @@ db_name = "Project_DB"
 def main():
     while True:
         afficher_menu()
-        recuperer_un_choix_valide()
- #       executer_choix() 
+        executer_choix(recuperer_un_choix_valide()) 
 
 #afficher le menu
 #   1/ nouvelle partie
@@ -28,13 +27,13 @@ def afficher_menu():
 #       sinon
 #           demander un autre choix input
 def recuperer_un_choix_valide():
-    choix = int(input("veuiller faire un choix entre 1, 2 et 3"))
-    if est_valide(choix):
-        return(int(choix))
-    int(input("veuiller faire un choix entre 1, 2 et 3"))    
+    while True:
+        choix = input("veuiller faire un choix entre 1, 2 et 3")
+        if est_valide(choix,1 ,3):
+            return(int(choix))
+        else :
+            print("réessayer vouc n'avez pas fait un choix valide")
 
-        
-main()
 #verifier le choix valide(choix, min, max)
 # boucle infini
 #   si choix n'est pas un nombre isdigit
@@ -42,9 +41,14 @@ main()
 #   si choix < min ou choix > max 
 #       retourner false
 #    retourner vrais
-def est_valide(choix):
-    while True:
-        if isdigit(choix)
+def est_valide(choix, min, max):
+        if not choix.isdigit():
+            return False
+        choix = int(choix)
+        if choix < min or choix > max:
+            return False
+        return True
+
 
 #executer le choix valide
 #   si le choix = 1 
@@ -53,8 +57,14 @@ def est_valide(choix):
 #       ouvrir le leaderboard
 #   si le choix = 3
 #       Fermer le jeu
-def executer_choix():
-    pass
+def executer_choix(choix):
+    if choix == 1:
+        lancer_partie()
+    if choix == 2:
+        lancer_leaderboard()
+    if choix == 3:
+        lancer_quitter()
+
 
 #Lancer une nouvelle partie
 #   recuperer le pseudo
@@ -167,3 +177,11 @@ def executer_choix():
 #somme des defences des items
 #   pour chaque item dans la liste item 
 #       on ajoute les def de chaque item ( sum(item[def]) )
+
+
+
+
+
+
+
+main()
