@@ -1,16 +1,25 @@
 #importer toute ma bdd et l'initialiser 
-
+from pymongo import MongoClient
+client = MongoClient("mongodb://localhost:27017/")
+db_name = "Project_DB"
 
 #initialiser le jeu 
 # boucle infini
 #   afficher le menu
 #   recuperer un choix valide
 #   executer le choix valide 
+def main():
+    while True:
+        afficher_menu()
+        recuperer_un_choix_valide()
+ #       executer_choix() 
 
 #afficher le menu
 #   1/ nouvelle partie
 #   2/ Leaderboard
 #   3/ Quitter le jeu
+def afficher_menu():
+    print(" Bienvenue dans le jeu infini \n // Menu //\n 1/ nouvelle partie\n 2/ Leaderboard\n 3/ Quitter")
 
 #recuperer un choix valide
 #   demander un choix input
@@ -18,7 +27,14 @@
 #           retourner choix
 #       sinon
 #           demander un autre choix input
+def recuperer_un_choix_valide():
+    choix = int(input("veuiller faire un choix entre 1, 2 et 3"))
+    if est_valide(choix):
+        return(int(choix))
+    int(input("veuiller faire un choix entre 1, 2 et 3"))    
 
+        
+main()
 #verifier le choix valide(choix, min, max)
 # boucle infini
 #   si choix n'est pas un nombre isdigit
@@ -26,6 +42,9 @@
 #   si choix < min ou choix > max 
 #       retourner false
 #    retourner vrais
+def est_valide(choix):
+    while True:
+        if isdigit(choix)
 
 #executer le choix valide
 #   si le choix = 1 
@@ -34,6 +53,8 @@
 #       ouvrir le leaderboard
 #   si le choix = 3
 #       Fermer le jeu
+def executer_choix():
+    pass
 
 #Lancer une nouvelle partie
 #   recuperer le pseudo
@@ -71,12 +92,17 @@
 #       enlever le hero choisi de la list des heros dispo
 
 #lancer le jeu
-#boucle infini
+#   score = 0
 #   tant que equipe en vie
-#       gerer l'apparition du monstre en vie
-#       lancer un tour
+#       lancer une vague
+#       si equipe est en vie
+#           score +=1
 #   enregistre le score optenue
 #   fin du jeu 
+
+#lancer une vague
+#   faire apparaitre un monstre
+#   lancer un tour
 
 #enregistre le score optenue 
 #   si la liste leaderboard < 10
@@ -99,9 +125,9 @@
 
 #lancer un tour
 #   pour chaque hero dans equipe qui est en vie 
-#       si pv monstre en vie > 0
+#       si pv monstre en vie et si equipe en vie 
 #           tour (hero)
-#   si pv monstre en vie > 0 et si equipe en vie 
+#   si pv monstre en vie 
 #       tour (monstre) 
 
 #en vie
@@ -111,15 +137,9 @@
 #       sinon
 #           retourner faux
 
-#gerer l'apparition du monstre en vie
-#   si il n'y a rien dans monstre en vie
-#       on ajoute un monstre au hasard dans monstre en vie
-#   sinon
-#       si les pv du monstre en vie sont > 0
-#           pass
-#       sinon
-#           on supprime le monstre (pop)
-#           on ajoute un monstre au hasard dans monstre en vie
+#l'apparition du monstre en vie
+#    on supprime le monstre (pop)
+#    on ajoute un monstre au hasard dans monstre en vie
 
 #tour hero sera dans les class (hunter, target)
 #  target subie des degats du hunter
