@@ -452,5 +452,4 @@ def afficher_leaderboard_joueur(db, player):
 	scores = get_top_scores(scores_db)
 	afficher_scores(scores)
 
-
 main()
