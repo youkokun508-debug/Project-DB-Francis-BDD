@@ -1,6 +1,9 @@
+from Entity import Entity
+from Item import Item
+from typing import List
 
 class Character(Entity):
-    def __init__(self, name: str, hp: int, defense: int, attack: int, equipement: List["Item"]):
+    def __init__(self, name: str, hp: int, defense: int, attack: int, equipement: List[Item]):
         super().__init__(name, hp, defense, attack)
         self.equipement = equipement
 
@@ -39,11 +42,11 @@ class Character(Entity):
             self.equipement.remove(item)
 
     def IsSlotAvailable(self, item: "Item") -> bool:
-        # Here you can implement the logic to check if the character has an available slot for the item
-        # For example, you can limit the number of items a character can equip
-        return True  # Placeholder implementation
+        if len(self.equipement) < 4 or item not in self.equipement:  # Assuming a maximum of 4 items can be equipped not the same type of item can be equipped at the same time
+            return True
+        return False  # Placeholder implementation
 
-    def getequipement(self) -> List["Item"]:
+    def getequipement(self) -> List[Item]:
         return self.equipement
 
     def projectdamage(self, target: "Entity") -> int:
@@ -55,4 +58,4 @@ class Character(Entity):
     def Playturn(self, target: "Entity"):
         # Here you can implement the logic for the character's turn
         # For example, you can choose to attack or use an item
-        self.Attack(target)
+        self.attack(target)

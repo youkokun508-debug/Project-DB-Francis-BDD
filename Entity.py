@@ -14,11 +14,11 @@ class Entity:
             "attack": self.attack
         }
 
-    def IsAlive(self) -> bool:
+    def is_alive(self) -> bool:
         return self.hp > 0
 
 
-    def TakeDamage(self, damage: int):
+    def take_damage(self, damage: int):
         self.hp -= damage
         if self.hp < 0:
             self.hp = 0
@@ -26,11 +26,11 @@ class Entity:
     def heal(self, amount: int):
         self.hp += amount
 
-    def Attack(self, target: "Entity"):
+    def attack(self, target: "Entity"):
         damage = self.attack - target.defense
         if damage < 0:
             damage = 0
-        target.TakeDamage(damage)
+        target.take_damage(damage)
 
-    def PlayTurn(self, target: "Entity"):
-        self.Attack(target)
+    def play_turn(self, target: "Entity"):
+        self.attack(target)

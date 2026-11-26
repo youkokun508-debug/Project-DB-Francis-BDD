@@ -1,3 +1,6 @@
+from Entity import Entity
+from Item import Item
+from typing import List
 
 class Monster(Entity):
     def __init__(self, name: str, hp: int, defense: int, attack: int, dropable: List["Item"]):
@@ -17,10 +20,9 @@ class Monster(Entity):
         return [item.name for item in self.dropable]
 
     def DropItem(self) -> List["Item"]:
-        # Here you can implement the logic to determine which items the monster drops
-        # For example, you can randomly select items from the dropable list
-        return self.dropable  # Placeholder implementation
+        # Placeholder implementation - replace with actual item dropping logic
+        return self.dropable
 
     def PlayTurn(self, target: "Entity"):
         # Here you can implement the logic for the monster's turn
-        self.Attack(target)
+        self.attack(target)

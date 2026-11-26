@@ -12,9 +12,5 @@ class consumable(Item):
         for stat, value in self.effect.items():
             if stat == "hp":
                 target.heal(value)
-            elif stat == "attack":
-                target.attack += value
-            elif stat == "defense":
-                target.defense += value
 
 
