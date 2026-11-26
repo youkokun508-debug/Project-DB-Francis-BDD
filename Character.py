@@ -56,6 +56,4 @@ class Character(Entity):
         return damage
 
     def Playturn(self, target: "Entity"):
-        # Here you can implement the logic for the character's turn
-        # For example, you can choose to attack or use an item
         self.attack(target)

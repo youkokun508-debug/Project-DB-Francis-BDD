@@ -99,6 +99,7 @@ classDiagram
 
     class Affichage {
         +DisplayVue(vue: Function)
+        +demanderImput (prompt: String) String
         +ShowError(error: String)
         +create_info_box(titre: String, info: String, box_color: String, text_color: String) Panel
         +create_select_box(titre: String, items: List~Item~, index: int, box_color: String, text_color: String, hover_color: String) Panel
@@ -107,6 +108,7 @@ classDiagram
     class Vue {
         <<File>>
         +VueInventaire(inventaire: List~Item~, team: List~Character~)
+        +VueSelectionAction(team: List~Character~, perso: Character)
         +VueTourJoueur(team: List~Character~, perso: Character, ennemis: List~Enemy~)
         +VueChoixCible(team: List~Character~, perso: Character, ennemis: List~Enemy~)
         +VueInfoTour(team: List~Character~, event: String, ennemis: List~Enemy~)
