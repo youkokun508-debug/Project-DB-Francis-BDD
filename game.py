@@ -1,6 +1,6 @@
 from player import Player
 from Vague import Vague
-import Monster
+import Enemy
 import equipable
 
 
@@ -21,8 +21,8 @@ class Game:
         gestionnaire = self.mongo_client.load_game()
         self.player = Player(**gestionnaire['player'])
         self.vague = Vague(**gestionnaire['vague'])
-        self.player.equipe = [Monster(**monster) for monster in gestionnaire['equpe']]
-        self.vague.enemies = [Monster(**monster) for monster in gestionnaire['monsters']]
+        self.player.equipe = [Enemy(**monster) for monster in gestionnaire['equpe']]
+        self.vague.enemies = [Enemy(**monster) for monster in gestionnaire['monsters']]
         self.player.inventory = [equipable(**item) for item in gestionnaire['inventaire']]
 
     def lancer_jeu(self, db):

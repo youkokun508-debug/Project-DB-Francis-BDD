@@ -1,23 +1,23 @@
 import random
-import Monster
+import Enemy
 import Entity
 import Player
 import Equipable
 import consumable
 
 class Vague:
-    def __init__(self, name: str, enemies: list["Monster"], difficulty: int):
+    def __init__(self, name: str, enemies: list["Enemy"], difficulty: int):
         self.name = name
         self.enemies = enemies
         self.difficulty = difficulty
 
     def vague__actuel(self):
-        
+
 
         
     def list_enemies(self):
         return [enemy.name for enemy in self.enemies]
-    def PickEnemies(self) -> list["Monster"]:
+    def PickEnemies(self) -> list["Enemy"]:
         return self.enemies
        
     def PlayTurn(self, target: "Entity"):

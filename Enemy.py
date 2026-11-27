@@ -3,7 +3,7 @@ from Item import Item
 from typing import List
 import random
 
-class Monster(Entity):
+class Enemy(Entity):
     def __init__(self, name: str, hp: int, defense: int, attack: int, dropable: List["Item"]):
         super().__init__(name, hp, defense, attack)
         self.dropable = dropable
@@ -21,7 +21,14 @@ class Monster(Entity):
         return [item.name for item in self.dropable]
 
     def DropItem(self) -> List["Item"]:
-        return self.dropable
+        lacher = []
+        for item in self.dropable:
+            if self.sa_drop():
+                lacher.append(item)
+        return lacher
 
     def PlayTurn(self, target: "Entity"):
-        self.attack(random.choice([enemy for enemy in self.enemies if enemy != target]))
+        return self.attack(random.choice([enemy for enemy in self.enemies if enemy != target]))
+
+    def sa_drop(self) -> bool:
+        return random.choice([True, False])
