@@ -15,6 +15,10 @@ class Character(Entity):
             "attack": self.attack,
             "equipement": [item.name for item in self.equipement]
         }
+    def __str__(self):
+        text = super().__str__()
+        text += f"\nEquipment: {', '.join(self.list_equipement())}"
+        return text
 
     def list_equipement(self):
         return [item.name for item in self.equipement]
@@ -34,9 +38,13 @@ class Character(Entity):
         return total_defense
     
 
-    def EquipItem(self, item: "Item"):
+    def EquipItem(self, item):
+        item_equipe_ou_pas = self.GetEquipment(item.item_type)
+        if item_equipe_ou_pas is not None:
+            self.UnequipItem(item_equipe_ou_pas)
         self.equipement.append(item)
-
+        
+            
     def UnequipItem(self, item: "Item"):
         if item in self.equipement:
             self.equipement.remove(item)
@@ -56,4 +64,4 @@ class Character(Entity):
         return damage
 
     def Playturn(self, target: "Entity"):
-        self.attack(target)
+        return self.attack(target)

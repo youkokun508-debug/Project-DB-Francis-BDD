@@ -24,5 +24,4 @@ class Monster(Entity):
         return self.dropable
 
     def PlayTurn(self, target: "Entity"):
-        # Here you can implement the logic for the monster's turn
         self.attack(random.choice([enemy for enemy in self.enemies if enemy != target]))

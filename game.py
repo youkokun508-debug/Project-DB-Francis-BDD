@@ -1,6 +1,7 @@
 from player import Player
 from Vague import Vague
-
+import Monster
+import equipable
 
 
 class Game:
@@ -22,13 +23,15 @@ class Game:
         self.vague = Vague(**gestionnaire['vague'])
         self.player.equipe = [Monster(**monster) for monster in gestionnaire['equpe']]
         self.vague.enemies = [Monster(**monster) for monster in gestionnaire['monsters']]
-        self.player.inventory = [Equipable(**item) for item in gestionnaire['inventaire']]
+        self.player.inventory = [equipable(**item) for item in gestionnaire['inventaire']]
 
-    def lancer_jeu(db):
-        #ask name cause its a new game
-        name = input("Enter your name: ")
-        joueur = creer_joueur(db, name)
-        
+    def lancer_jeu(self, db):
+        #lancer le jeu sans sauvegarde
+        player = Player("Player1", 100, 10, 20)
+        vague = Vague("Vague1", [], 1)
+        mongo_client = db
+        game = Game(player, mongo_client, vague)
+        return game
 
     def ShowLeaderboard(self):
         leaderboard = self.mongo_client.get_leaderboard()

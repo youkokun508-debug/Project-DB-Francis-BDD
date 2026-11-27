@@ -1,3 +1,4 @@
+import Item
 class consumable(Item):
     def __init__(self, name: str, item_type: str, description: str, droprate: int, rarity: str, effect: dict):
         super().__init__(name, item_type, description, droprate, rarity, 0, 0)
