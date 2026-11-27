@@ -16,6 +16,12 @@ class Entity:
             "attack_base": self.attack_base
         }
 
+    def __str__(self):
+        return (
+            f"{self.name} (HP: {self.hp}/{self.max_hp}, "
+            f"Defense: {self.defense_base}, Attack: {self.attack_base})"
+        )
+
     def is_alive(self) -> bool:
         return self.hp > 0
 

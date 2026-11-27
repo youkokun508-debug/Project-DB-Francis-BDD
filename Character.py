@@ -15,10 +15,6 @@ class Character(Entity):
             "attack": self.attack,
             "equipement": [item.name for item in self.equipement]
         }
-    def __str__(self):
-        text = super().__str__()
-        text += f"\nEquipment: {', '.join(self.list_equipement())}"
-        return text
 
     def list_equipement(self):
         return [item.name for item in self.equipement]
