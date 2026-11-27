@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 from typing import List
-
 mongo_client = MongoClient()
 gamedb = mongo_client["gamedb"]
 import Character
@@ -13,14 +12,19 @@ class Player:
         self.team = team
         self.inventory = inventory
 
-    def createteam(self, characters: list["Character"]):
-        self.team = characters
+    def __str__(self) -> str:
+        return (
+            f"Player(name={self.name}, score={self.score}, "
+            f"team={self.getteam()}, inventory={self.getinventory()})"
+        )
+
+    def createteam(self):
+        self.team = []
 
     def pickcharacter(self, character_name: str) -> "Character":
-        for character in self.team:
-            if character.name == character_name:
-                return character
-        return None
+        character = Character.Character(character_name)
+        self.team.append(character)
+        return character
 
     def isteamalive(self) -> bool:
         return any(character.IsAlive() for character in self.team)

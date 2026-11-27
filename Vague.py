@@ -1,9 +1,9 @@
 import random
-import Enemy
-import Entity
-import player
-import equipable
-import consumable
+from Enemy import Enemy
+from Entity import Entity
+from player import player
+from equipable import equipable
+from consumable import consumable
 
 class Vague:
     def __init__(self, name: str, enemies: list["Enemy"], difficulty: int):
