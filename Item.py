@@ -18,3 +18,10 @@ class Item:
             "attack_bonus": self.attack_bonus,
             "defense_bonus": self.defense_bonus
         }
+
+    def __str__(self):
+        return (
+            f"{self.name} ({self.rarity} {self.item_type}) - {self.description} "
+            f"[drop rate: {self.droprate}, attack bonus: {self.attack_bonus}, "
+            f"defense bonus: {self.defense_bonus}]"
+        )
