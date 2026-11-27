@@ -3,7 +3,7 @@
 Les données sont écrites en dur, MongoDB n'est pas nécessaire.
 """
 from affichage import Affichage
-from game_classes import Character, Consumable, Enemy, Equipable
+from game import Character, Consumable, Enemy, Equipable
 from model import CharacterSaveDB, MonsterSaveDB, SaveDB, ScoreDB
 from vues import (
 	VueChargerSauvegarde,
@@ -144,7 +144,6 @@ def main():
 			Affichage.console.print(f"{nom} → index retourné : {resultat}")
 	except KeyboardInterrupt:
 		print("Ctrl+C détecté, sortie de la démo.")
-		pass
 
 
 if __name__ == "__main__":

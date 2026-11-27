@@ -1,11 +1,19 @@
+from pymongo import MongoClient
+from typing import List
+
+mongo_client = MongoClient()
+gamedb = mongo_client["gamedb"]
+import Character
+
+
 class Player:
-    def __init__(self, name: str, score: int, team: List["Character"], inventory: List["Item"]):
+    def __init__(self, name: str, score: int, team: list["Character"], inventory: List["Item"]):
         self.name = name
         self.score = score
         self.team = team
         self.inventory = inventory
 
-    def createteam(self, characters: List["Character"]):
+    def createteam(self, characters: list["Character"]):
         self.team = characters
 
     def pickcharacter(self, character_name: str) -> "Character":
@@ -17,7 +25,7 @@ class Player:
     def isteamalive(self) -> bool:
         return any(character.IsAlive() for character in self.team)
 
-    def checkinventory(self) -> List[str]:
+    def checkinventory(self) -> list[str]:
         return [item.name for item in self.inventory]
 
     def useitem(self, item_name: str, target: "Entity"):
@@ -35,8 +43,8 @@ class Player:
         if item in self.inventory:
             self.inventory.remove(item)
 
-    def getteam(self) -> List[str]:
+    def getteam(self) -> list[str]:
         return [character.name for character in self.team]
 
-    def getinventory(self) -> List[str]:
+    def getinventory(self) -> list[str]:
         return [item.name for item in self.inventory]

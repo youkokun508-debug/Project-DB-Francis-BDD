@@ -1,8 +1,8 @@
 import random
 import Enemy
 import Entity
-import Player
-import Equipable
+import player
+import equipable
 import consumable
 
 class Vague:
@@ -11,7 +11,7 @@ class Vague:
         self.enemies = enemies
         self.difficulty = difficulty
 
-    def vague__actuel(self):
+#    def vague__actuel(self):
 
 
         
